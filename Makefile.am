@@ -83,6 +83,7 @@ BUILT_SOURCES = \
 	ethercat.spec
 
 modules:
+	$(info Root Makefile.am)
 	echo -n "char* gitlog = \"" > @abs_srcdir@/master/gitlog.h && \
         	git log | head -1 | awk '{printf "%s", substr($$2,1,8)}' >> @abs_srcdir@/master/gitlog.h && \
         	echo "\";" >> @abs_srcdir@/master/gitlog.h
