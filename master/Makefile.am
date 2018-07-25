@@ -83,9 +83,9 @@ BUILT_SOURCES = \
 	Kbuild
 
 modules:
-	echo -n "char* gitlog = \"" > gitlog.h && \
-        	git log | head -1 | awk '{printf "%s", substr($$2,1,8)}' >> gitlog.h && \
-        	echo "\";" >> gitlog.h
+	echo -n "char* gitlog = \"" > @abs_srcdir@/master/gitlog.h && \
+        	git log | head -1 | awk '{printf "%s", substr($$2,1,8)}' >> @abs_srcdir@/master/gitlog.h && \
+        	echo "\";" >> @abs_srcdir@/master/gitlog.h
 	$(MAKE) -C "$(LINUX_SOURCE_DIR)" M="@abs_srcdir@" modules
 
 modules_install:
