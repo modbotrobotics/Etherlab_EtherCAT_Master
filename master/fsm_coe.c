@@ -1200,6 +1200,7 @@ void ec_fsm_coe_dict_entry_response(
             fsm->sdo->index, fsm->subindex);
 #endif
     }
+    slave->sdo_dictionary_fetched = 2;
 
     fsm->state = ec_fsm_coe_end;
 }
