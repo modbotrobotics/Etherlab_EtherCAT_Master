@@ -384,6 +384,7 @@ int ecrt_master_get_pdo_entry(ec_master_t *master, uint16_t slave_position,
     entry->index = data.index;
     entry->subindex = data.subindex;
     entry->bit_length = data.bit_length;
+    memmove(entry->name, data.name, EC_IOCTL_STRING_SIZE);
 
     return 0;
 }

@@ -450,6 +450,7 @@ typedef struct {
     uint16_t index; /**< PDO entry index. */
     uint8_t subindex; /**< PDO entry subindex. */
     uint8_t bit_length; /**< Size of the PDO entry in bit. */
+    char name[EC_MAX_STRING_LENGTH];
 } ec_pdo_entry_info_t;
 
 /*****************************************************************************/
