@@ -470,6 +470,7 @@ typedef struct {
     ec_pdo_entry_info_t *entries; /**< Array of PDO entries to map. Can either
                                     be \a NULL, or must contain at
                                     least \a n_entries values. */
+    char name[EC_MAX_STRING_LENGTH];
 } ec_pdo_info_t;
 
 /*****************************************************************************/

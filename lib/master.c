@@ -352,6 +352,7 @@ int ecrt_master_get_pdo(ec_master_t *master, uint16_t slave_position,
     pdo->index = data.index;
     pdo->n_entries = data.entry_count;
     pdo->entries = NULL;
+    memmove(pdo->name, data.name, EC_IOCTL_STRING_SIZE);
 
     return 0;
 }
