@@ -352,7 +352,7 @@ int ecrt_master_get_pdo(ec_master_t *master, uint16_t slave_position,
     pdo->index = data.index;
     pdo->n_entries = data.entry_count;
     pdo->entries = NULL;
-    memmove(pdo->name, data.name, EC_IOCTL_STRING_SIZE);
+    memmove(pdo->name, data.name, EC_MAX_STRING_LENGTH);
 
     return 0;
 }
@@ -385,7 +385,7 @@ int ecrt_master_get_pdo_entry(ec_master_t *master, uint16_t slave_position,
     entry->index = data.index;
     entry->subindex = data.subindex;
     entry->bit_length = data.bit_length;
-    memmove(entry->name, data.name, EC_IOCTL_STRING_SIZE);
+    memmove(entry->name, data.name, EC_MAX_STRING_LENGTH);
 
     return 0;
 }
